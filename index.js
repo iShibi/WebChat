@@ -11,9 +11,6 @@ const server = app.listen(PORT, () => {
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
-// app.get('/', (req, res) => {
-// 	res.sendFile(__dirname + '/public/index.html');
-// });
 
 // Socket setup
 const io = socket(server);
