@@ -1,5 +1,6 @@
 const express = require('express');
 const socket = require('socket.io');
+const path = require('path');
 
 // Server setup
 const PORT = process.env.PORT || 4000;
@@ -9,7 +10,10 @@ const server = app.listen(PORT, () => {
 });
 
 // Static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/', (req, res) => {
+// 	res.sendFile(__dirname + '/public/index.html');
+// });
 
 // Socket setup
 const io = socket(server);
