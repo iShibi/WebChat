@@ -1,4 +1,4 @@
-const socket = io.connect();
+const socket = io();
 
 // on clicking the send button
 const sendButton = document.getElementById('send-button');
